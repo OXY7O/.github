@@ -1,12 +1,14 @@
 <div align="center">
 
-<img src="./assets/oxy7o-orbital.png" alt="OXY7O ORBITAL" width="180">
+<img src="./assets/oxy7o-orbital.png" alt="OXY7O ORBITAL" width="190">
 
 # OXY7O ORBITAL
 
-### The engineering orbit behind OXY7.
+### The engineering orbit behind OXY7
 
 **Operational eXecution. Yield at Scale.**
+
+<br>
 
 Infrastructure Operations · Automation · Reliability · Intelligence
 
@@ -14,21 +16,62 @@ Infrastructure Operations · Automation · Reliability · Intelligence
 
 ---
 
-## OXY7
+## Welcome to the Orbit 🪐
 
-**OXY7** is an Infrastructure Operations Platform built to turn operational
-signals into controlled, reliable, and scalable outcomes.
+**OXY7O** is where we build and evolve the engineering ecosystem behind **OXY7**.
 
-OXY7O is the engineering organization where the OXY7 platform, services,
-integrations, specifications, and operational tooling are developed.
+OXY7 is an **Infrastructure Operations Platform** designed to turn infrastructure
+signals into context, decisions, controlled execution, and measurable outcomes.
+
+Here, infrastructure isn't just monitored.
+
+**It's understood, orchestrated, and continuously improved.**
 
 ---
 
 ## ORBITAL
 
-**ORBITAL** is the Seven-Orbit Operational Framework behind OXY7.
+Our operational philosophy follows seven connected orbits:
 
-> **O**bserve · **R**elate · **B**aseline · **I**nterpret · **T**ake Action · **A**ssure · **L**earn
+<div align="center">
 
-```text
-Observe → Relate → Baseline → Interpret → Take Action → Assure → Learn ↻
+### Observe → Relate → Baseline → Interpret → Take Action → Assure → Learn
+
+</div>
+
+**Observe** what is happening.  
+**Relate** systems and dependencies.  
+**Baseline** normal behavior.  
+**Interpret** what changed and why.  
+**Take Action** with control.  
+**Assure** the outcome.  
+**Learn** and improve continuously.
+
+Then the orbit begins again.
+
+---
+
+## What we're building
+
+`Platform` · `Observability` · `Orchestration` · `Automation`
+
+`Infrastructure Intelligence` · `Reliability` · `Governance`
+
+From Kubernetes and infrastructure signals to operational intelligence,
+automation, and governed execution.
+
+---
+
+<div align="center">
+
+<br>
+
+### Build. Operate. Improve.
+
+**OXY7O ORBITAL**
+
+*Engineering infrastructure operations as a continuous system.*
+
+<br>
+
+</div>
