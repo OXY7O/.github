@@ -1,0 +1,47 @@
+name: Task platform
+description: Pekerjaan terbatas dengan satu hasil yang dapat diverifikasi
+title: "[Task]: "
+labels: ["area:workflow"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: Gunakan data aman. Jangan menulis credential, endpoint internal, raw evidence, atau security finding nonpublik.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Ringkasan
+      description: Jelaskan konteks, tujuan, dan batas pekerjaan.
+    validations: {required: true}
+  - type: textarea
+    id: deliverable
+    attributes:
+      label: Deliverable
+      description: Hasil tunggal dan batas pekerjaan task ini.
+    validations: {required: true}
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance criteria
+      description: Kondisi lulus yang spesifik dan dapat diuji.
+    validations: {required: true}
+  - type: input
+    id: governance-reference
+    attributes:
+      label: Governance reference
+      description: Kontrol P01-P16 atau record ID yang menjadi dasar.
+      placeholder: P06, P15
+    validations: {required: true}
+  - type: textarea
+    id: evidence-expectation
+    attributes:
+      label: Evidence expectation
+      description: Safe evidence yang harus tersedia saat pekerjaan selesai.
+    validations: {required: true}
+  - type: textarea
+    id: definition-of-done
+    attributes:
+      label: Definition of Done
+      description: Checks, dokumentasi, review, release, dan evidence yang wajib lengkap.
+    validations: {required: true}
+
