@@ -111,6 +111,16 @@ Every outcome should improve future understanding and execution.
 This `.github` repository provides shared organization-level resources for
 **OXY7O**.
 
+Repository ini juga menyediakan default intake untuk pekerjaan platform:
+
+- issue forms Epic, User Story, Feature, Task, Bug, Spike, dan Technical Debt;
+- pull request template dengan traceability issue, Project, Epic, governance,
+  evidence, dan release;
+- routing vulnerability menuju private security advisory.
+
+Repository lain mewarisi template ini selama tidak memiliki override lokal.
+Override harus memiliki kebutuhan domain khusus dan review Platform Governance.
+
 ```text
 .github/
 ├── README.md
