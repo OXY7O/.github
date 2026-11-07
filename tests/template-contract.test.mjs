@@ -29,11 +29,19 @@ test("type-specific forms capture the information needed for triage", () => {
   for (const id of ["question", "timebox", "decision-output"]) assert.equal(ids("spike").has(id), true);
 });
 
-test("pull request template enforces issue-to-release traceability", () => {
+test("organization PR template preserves native issue metadata and real evidence", () => {
   const template = read(".github/PULL_REQUEST_TEMPLATE.md");
-  for (const phrase of ["Closes #", "GitHub Project", "Parent Epic", "Governance reference", "Risk dan impact", "Evidence", "Release impact"])
-    assert.match(template, new RegExp(phrase, "i"));
-  assert.match(template, /tidak memuat secret/i);
+  for (const phrase of [
+    "## Traceability", "Governing issue", "GitHub-native",
+    "## Risk dan impact", "## Validasi aktual", "exact commit SHA",
+    "NOT RUN", "Full Admission", "## Release impact", "## Review checklist",
+  ])
+    assert.ok(template.includes(phrase), "PR template missing " + phrase);
+
+  assert.doesNotMatch(template, /^\s*-\s*(Priority|Status|Story Points|Sprint|Parent Epic|GitHub Project):/im);
+  assert.match(template, /Jangan menggunakan/);
+  assert.match(template, /Tidak ada secrets, internal endpoints, private evidence/i);
+  assert.match(template, /template organisasi ini hanya fallback/i);
 });
 
 test("templates do not request confidential material", () => {
@@ -43,8 +51,27 @@ test("templates do not request confidential material", () => {
   assert.doesNotMatch(combined, /token value|secret value/i);
 });
 
-test("chooser disables unstructured issues and routes security privately", () => {
+test("chooser routes security to owning repository selection without false advisory endpoint", () => {
   const chooser = parse(read(path.join(root, "config.yml")));
   assert.equal(chooser.blank_issues_enabled, false);
-  assert.equal(chooser.contact_links.some(({name, url}) => /security/i.test(name) && /security\/advisories\/new$/.test(url)), true);
+  const security = chooser.contact_links.filter(({name}) => /security/i.test(name));
+  assert.equal(security.length, 1);
+  assert.equal(security[0].url, "https://github.com/OXY7O/.github/blob/main/SECURITY.md");
+  assert.match(security[0].about, /kanal privat/i);
+  assert.equal(chooser.contact_links.some(({url}) => /security\/advisories\/new$/.test(url)), false);
+});
+
+test("shared community fallback exists without claiming publication or security activation", () => {
+  const security = read("SECURITY.md");
+  const support = read("SUPPORT.md");
+  const contributing = read("CONTRIBUTING.md");
+  const conduct = read("CODE_OF_CONDUCT.md");
+  const governance = read("GOVERNANCE.md");
+  assert.ok(security.includes("affected repository"));
+  assert.ok(security.includes("not a declaration that private vulnerability reporting"));
+  assert.ok(security.includes("Do **not** open a public issue"));
+  assert.match(support, /not a guaranteed support service/i);
+  assert.match(contributing, /repository-local guidance takes precedence/i);
+  assert.match(conduct, /OXY7O Community Code of Conduct/i);
+  assert.match(governance, /does not authorize publication, licensing changes/i);
 });
