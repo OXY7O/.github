@@ -1,5 +1,5 @@
 blank_issues_enabled: false
 contact_links:
   - name: Security vulnerability
-    url: https://github.com/OXY7O/.github/security/advisories/new
-    about: Laporkan vulnerability secara privat dan jangan membuat issue publik.
+    url: https://github.com/OXY7O/.github/blob/main/SECURITY.md
+    about: Baca panduan security organisasi, pilih repository terdampak, lalu gunakan kanal privat yang telah diverifikasi. Jangan publikasikan detail vulnerability.
