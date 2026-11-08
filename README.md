@@ -111,27 +111,41 @@ Every outcome should improve future understanding and execution.
 This `.github` repository provides shared organization-level resources for
 **OXY7O**.
 
-Repository ini juga menyediakan default intake untuk pekerjaan platform:
+Repository ini menyediakan **default community health dan contributor intake**
+untuk OXY7O. File lokal di repository produk tetap menjadi authority apabila
+tersedia. Public repository visibility **bukan** izin menggunakan ulang source
+code sebelum lisensi dan rights review selesai.
 
-- issue forms Epic, User Story, Feature, Task, Bug, Spike, dan Technical Debt;
-- pull request template dengan traceability issue, Project, Epic, governance,
-  evidence, dan release;
-- routing vulnerability menuju private security advisory.
+- [CONTRIBUTING.md](CONTRIBUTING.md) — langkah mengusulkan kontribusi dan
+  batas antara fork feedback dengan acceptance oleh maintainer.
+- [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) — perilaku dan moderasi komunitas.
+- [GOVERNANCE.md](GOVERNANCE.md) — kepemilikan keputusan serta Issue/Project
+  metadata melalui field GitHub-native.
+- [SUPPORT.md](SUPPORT.md) — dukungan non-security dan pemilihan repository.
+- [SECURITY.md](SECURITY.md) — **routing** disclosure ke repository yang
+  terdampak; jangan menganggap advisories/private reporting otomatis aktif.
+- `.github/ISSUE_TEMPLATE/` — issue forms dan chooser untuk intake aman.
+- `.github/PULL_REQUEST_TEMPLATE.md` — fallback PR review, evidence,
+  traceability, dan acceptance tanpa tabel metadata Project di body.
 
-Repository lain mewarisi template ini selama tidak memiliki override lokal.
-Override harus memiliki kebutuhan domain khusus dan review Platform Governance.
+Pengaturan GitHub Security, lisensi, brand, runner trust boundaries, dan
+publikasi tetap memerlukan verifikasi/persetujuan terpisah. Referensi utama:
+[KAORI open-source readiness #4211](https://github.com/OXY7O/KAORI/issues/4211).
 
 ```text
 .github/
+├── .github/
+│   ├── ISSUE_TEMPLATE/
+│   ├── PULL_REQUEST_TEMPLATE.md
+│   └── workflows/
+├── CONTRIBUTING.md
+├── CODE_OF_CONDUCT.md
+├── GOVERNANCE.md
+├── SECURITY.md
+├── SUPPORT.md
 ├── README.md
-│
 ├── profile/
 │   ├── README.md
 │   └── assets/
-│       └── oxy7o-orbital.png
-│
-├── ISSUE_TEMPLATE/
-├── PULL_REQUEST_TEMPLATE.md
-├── CONTRIBUTING.md
-├── CODE_OF_CONDUCT.md
-└── SECURITY.md
+└── tests/
+```
