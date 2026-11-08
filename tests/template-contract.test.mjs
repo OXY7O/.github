@@ -75,3 +75,14 @@ test("shared community fallback exists without claiming publication or security 
   assert.match(conduct, /OXY7O Community Code of Conduct/i);
   assert.match(governance, /does not authorize publication, licensing changes/i);
 });
+
+test("organization README references actual root-level policy routes", () => {
+  const readme = read("README.md");
+  for (const name of ["CONTRIBUTING", "CODE_OF_CONDUCT", "GOVERNANCE", "SECURITY", "SUPPORT"])
+    assert.match(readme, new RegExp("\\[" + name + "\\.md\\]\\(" + name + "\\.md\\)"));
+  assert.match(readme, /repository produk tetap menjadi authority/i);
+  assert.match(readme, /Public repository visibility.*bukan/i);
+  assert.match(readme, /jangan menganggap advisories\/private reporting otomatis aktif/i);
+  assert.doesNotMatch(readme, /routing vulnerability menuju private security advisory\./i);
+  assert.doesNotMatch(readme, /GitHub Project: `Platform Engineering Delivery`/i);
+});
