@@ -86,3 +86,7 @@ test("organization README references actual root-level policy routes", () => {
   assert.doesNotMatch(readme, /routing vulnerability menuju private security advisory\./i);
   assert.doesNotMatch(readme, /GitHub Project: `Platform Engineering Delivery`/i);
 });
+
+test("INTENTIONAL_NEGATIVE_REQUIRED_CHECK_ISSUE_4 — must never merge", () => {
+  assert.fail("INTENTIONAL_NEGATIVE_REQUIRED_CHECK_ISSUE_4: expected CI failure, test-only pull request; do not merge");
+});
