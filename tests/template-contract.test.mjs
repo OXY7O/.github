@@ -74,6 +74,13 @@ test("shared community fallback exists without claiming publication or security 
   assert.match(contributing, /repository-local guidance takes precedence/i);
   assert.match(conduct, /OXY7O Community Code of Conduct/i);
   assert.match(governance, /does not authorize publication, licensing changes/i);
+  assert.match(governance, /Protected organization-default changes and emergency recovery/);
+  assert.match(governance, /26790893/);
+  assert.match(governance, /26791232/);
+  assert.match(governance, /Community Policy Contracts/);
+  assert.match(governance, /Two distinct authorized humans approve any exception/);
+  assert.match(governance, /no direct push to \`main\`/i);
+  assert.match(governance, /read-only verification/i);
 });
 
 test("organization README references actual root-level policy routes", () => {
